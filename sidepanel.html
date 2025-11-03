@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Quiz Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="hero-text">Page Quiz</h1>
+            <p class="body-text-muted">Generate quizzes from any page.</p>
+        </header>
+
+        <div id="api-key-section" class="card">
+            <h2 class="heading-text">Gemini API Key</h2>
+            <p class="body-text-muted">Enter your Gemini API key to generate quizzes.</p>
+            <div class="input-group">
+                <input type="password" id="api-key-input" placeholder="Enter your Gemini API key">
+                <button id="save-api-key-btn" class="button primary-button">Save Key</button>
+            </div>
+            <p id="api-key-status" class="body-text-muted"></p>
+        </div>
+
+        <div id="quiz-controls-section" class="card hidden">
+            <h2 class="heading-text">Generate Quiz</h2>
+            <p class="body-text-muted">Click below to generate a quiz from the current page's content.</p>
+            <button id="generate-quiz-btn" class="button primary-button">
+                <img id="generate-icon" class="button-icon" alt="Generate">
+                Generate Quiz
+            </button>
+            <div id="loading-spinner" class="spinner hidden"></div>
+            <p id="error-message" class="error-message body-text-muted"></p>
+        </div>
+
+        <div id="quiz-display-section" class="card hidden">
+            <h2 id="question-number" class="heading-text"></h2>
+            <p id="question-text" class="body-text"></p>
+            <div id="options-container" class="options-grid">
+                <!-- Options will be injected here -->
+            </div>
+            <div class="quiz-navigation">
+                <button id="prev-question-btn" class="button secondary-button" disabled>
+                    <img id="prev-icon" class="button-icon" alt="Previous">
+                    Previous
+                </button>
+                <span id="score-display" class="score-text body-text-muted">Score: 0/0</span>
+                <button id="next-question-btn" class="button primary-button" disabled>
+                    Next
+                    <img id="next-icon" class="button-icon" alt="Next">
+                </button>
+            </div>
+        </div>
+
+        <div id="quiz-results-section" class="card hidden">
+            <h2 class="heading-text">Quiz Complete!</h2>
+            <p id="final-score" class="hero-text"></p>
+            <button id="retake-quiz-btn" class="button primary-button">
+                <img id="refresh-icon" class="button-icon" alt="Retake">
+                Retake Quiz
+            </button>
+        </div>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>
